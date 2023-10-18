@@ -1,0 +1,47 @@
+﻿<Window x:Class="WPFOpenGL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFOpenGL"
+        xmlns:sharpGL="clr-namespace:SharpGL.WPF;assembly=SharpGL.WPF"
+        mc:Ignorable="d"
+        Title="OpenGL" Height="700" Width="1200">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="150" />
+        </Grid.ColumnDefinitions>
+
+        <sharpGL:OpenGLControl 
+            Grid.Column="0"
+            OpenGLDraw="OpenGLControl_OnOpenGLDraw"
+            OpenGLInitialized="OpenGLControl_OnOpenGLInitialized"
+            DrawFPS="True"
+            Resized="OpenGLControl_OnResized"
+            MouseLeftButtonDown="UIElement_OnMouseLeftButtonDown"
+        />
+
+        <StackPanel Grid.Column="1" Background="LightGray">
+
+            <Button Content="Add" 
+                    Margin="4,5,4,5" 
+                    Click="Add_OnClick"/>
+            <Button Content="Select" 
+                    Margin="4,5,4,5" 
+                    Click="Select_OnClick"/>
+            <Button Content="Finish" 
+                    Margin="4,5,4,5" 
+                    Click="Finish_OnClick"/>
+            <Button Content="Delete" 
+                    Margin="4,5,4,5" 
+                    Click="Delete_OnClick"/>
+            <Button Content="Move" 
+                    Margin="4,5,4,5" 
+                    Click="Move_OnClick"/>
+            <Button Content="Parameters" 
+                    Margin="4,5,4,5" 
+                    Click="Parameters_OnClick"/>
+        </StackPanel>
+    </Grid>
+</Window>
